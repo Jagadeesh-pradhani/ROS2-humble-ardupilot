@@ -2,8 +2,11 @@
 
 ## Requirements
 
-UBUNTU 22.04 LTS
-ROS-Humble
-Gazebo-garden
-Ardupilot
+1. UBUNTU 22.04 LTS
+2. ROS-Humble
+3. Gazebo-garden
+4. Ardupilot
 
+## UBUNTU 22.04 LTS
+
+https://ubuntu.com/download/desktop
