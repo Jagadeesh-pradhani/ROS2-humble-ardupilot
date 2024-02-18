@@ -111,66 +111,66 @@
       ```
 
 ## Ardupilot Plugin
-
-1. Referred from https://ardupilot.org/dev/docs/sitl-with-gazebo.html#sitl-with-gazebo
-
-2. Steps to install
-   1. To install ardupilot_gazebo plugin <br>
-      Install additional dependencies
-      ```
-      sudo apt update
-      sudo apt install libgz-sim7-dev rapidjson-dev
-      ```
-   2. Create a workspace folder and clone the repository
-      ```
-      mkdir -p gz_ws/src && cd gz_ws/src
-      git clone https://github.com/ArduPilot/ardupilot_gazebo
-      ```
-   3. Build the plugin
-      ```
-      export GZ_VERSION=garden
-      cd ardupilot_gazebo
-      mkdir build && cd build
-      cmake .. -DCMAKE_BUILD_TYPE=RelWithDebInfo
-      make -j4
-      ```
-   4. Configure the environment
-      ```
-      export GZ_SIM_SYSTEM_PLUGIN_PATH=$HOME/gz_ws/src/ardupilot_gazebo/build:$GZ_SIM_SYSTEM_PLUGIN_PATH
-      export GZ_SIM_RESOURCE_PATH=$HOME/gz_ws/src/ardupilot_gazebo/models:$HOME/gz_ws/src/ardupilot_gazebo/worlds:$GZ_SIM_RESOURCE_PATH
-      ```
-
-   5. In a new terminal install ardupilot (https://ardupilot.org/dev/docs/building-setup-linux.html#building-setup-linux)
-      ```
-      git clone https://github.com/ArduPilot/ardupilot -b master
-      cd ardupilot
-      ```
-      Install some required packages
-      ```
-      Tools/environment_install/install-prereqs-ubuntu.sh -y
-      ```
-      Reload the path (log-out and log-in to make permanent):
-      ```
-      . ~/.profile
-      ```
-      waf calls (do not use sudo)
-      ```
-      ./waf configure --board CubeBlack
-      ./waf copter
-      ```
-      clean
-      ```
-      ./waf clean
-      ```
+   
+   1. Referred from https://ardupilot.org/dev/docs/sitl-with-gazebo.html#sitl-with-gazebo
+   
+   2. Steps to install
+      1. To install ardupilot_gazebo plugin <br>
+         Install additional dependencies
+         ```
+         sudo apt update
+         sudo apt install libgz-sim7-dev rapidjson-dev
+         ```
+      2. Create a workspace folder and clone the repository
+         ```
+         mkdir -p gz_ws/src && cd gz_ws/src
+         git clone https://github.com/ArduPilot/ardupilot_gazebo
+         ```
+      3. Build the plugin
+         ```
+         export GZ_VERSION=garden
+         cd ardupilot_gazebo
+         mkdir build && cd build
+         cmake .. -DCMAKE_BUILD_TYPE=RelWithDebInfo
+         make -j4
+         ```
+      4. Configure the environment
+         ```
+         export GZ_SIM_SYSTEM_PLUGIN_PATH=$HOME/gz_ws/src/ardupilot_gazebo/build:$GZ_SIM_SYSTEM_PLUGIN_PATH
+         export GZ_SIM_RESOURCE_PATH=$HOME/gz_ws/src/ardupilot_gazebo/models:$HOME/gz_ws/src/ardupilot_gazebo/worlds:$GZ_SIM_RESOURCE_PATH
+         ```
+   
+      5. In a new terminal install ardupilot (https://ardupilot.org/dev/docs/building-setup-linux.html#building-setup-linux)
+         ```
+         git clone https://github.com/ArduPilot/ardupilot -b master
+         cd ardupilot
+         ```
+         Install some required packages
+         ```
+         Tools/environment_install/install-prereqs-ubuntu.sh -y
+         ```
+         Reload the path (log-out and log-in to make permanent):
+         ```
+         . ~/.profile
+         ```
+         waf calls (do not use sudo)
+         ```
+         ./waf configure --board CubeBlack
+         ./waf copter
+         ```
+         clean
+         ```
+         ./waf clean
+         ```
 
 ## Running gazebo SITL
 
-1. Terminal - 1 : To run gazebo world
-   ```
-   gz sim -v4 -r iris_runway.sdf
-   ```
-2. Terminal - 2 : To connect to ardupilot plugin
-   ```
-   cd ardupilot
-   sim_vehicle.py -v ArduCopter -f gazebo-iris --model JSON --map --console
-   ```
+   1. Terminal - 1 : To run gazebo world
+      ```
+      gz sim -v4 -r iris_runway.sdf
+      ```
+   2. Terminal - 2 : To connect to ardupilot plugin
+      ```
+      cd ardupilot
+      sim_vehicle.py -v ArduCopter -f gazebo-iris --model JSON --map --console
+      ```
