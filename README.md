@@ -103,7 +103,7 @@
       ```
       Install ros_gz from the non official binary packages from apt:
       ```
-      apt-get install ros-humble-ros-gzgarden
+      sudo apt-get install ros-humble-ros-gzgarden
       ```
    3. Check installation
       ```
