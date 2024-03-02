@@ -140,7 +140,8 @@
          export GZ_SIM_RESOURCE_PATH=$HOME/gz_ws/src/ardupilot_gazebo/models:$HOME/gz_ws/src/ardupilot_gazebo/worlds:$GZ_SIM_RESOURCE_PATH
          ```
    
-      5. In a new terminal install ardupilot (https://ardupilot.org/dev/docs/building-setup-linux.html#building-setup-linux)
+      5. In a new terminal install ardupilot (https://ardupilot.org/dev/docs/building-setup-linux.html#building-setup-linux)<br>
+         Open terminal in Home location
          ```
          git clone https://github.com/ArduPilot/ardupilot -b master
          cd ardupilot
