@@ -182,3 +182,6 @@
 
 ### ROS-GZ-BRIDGE
    https://github.com/gazebosim/ros_gz
+
+Camera Gimbal control:
+   Gimbal controll : servo 5->2000 and 6->1000
